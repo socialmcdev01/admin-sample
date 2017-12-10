@@ -6,6 +6,9 @@
 
 1. install jdk
     - scoop in windows
+    <pre><code>echo %JAVA_HOME%
+    java -version
+    </code></pre>
 2. gradle
     - maven
 3. spring boot

@@ -2,6 +2,25 @@
 <html xmlns:th="http://www.thymeleaf.org" 
       xmlns:sec="http://www.springframework.org/schema/security">
 <head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    var url="/api/news";
+    $.ajax({
+        type:"get",
+        url:url,
+        success:function(result){
+        	$.each(result, function(i, n) {
+        		var newsline = '<tr><td>' + n.id + '</td><td><a href="' + n.url + '">' + n.title + '</a></td></tr>';
+				$('#news-body').append(newsline);
+        	});
+        },
+        error:function(e){
+            alert(e.responseText);
+        }
+    });
+});
+</script>
 </head>
 <body>
 
@@ -10,23 +29,23 @@
         <div><a href="/">index</a></div>
         <div><a href="/admin">admin</a></div>
         
-        <div class="news-contents">
-        
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>title</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="news : ${newslist}" th:object="${news}">
-                    <td th:text="*{id}"></td>
-                    <td><a th:text="*{title}" th:href="*{url}"></a></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="news-contents" id="news-contents">
+			<table class="table table-bordered table-striped">
+			    <thead>
+			        <tr>
+			            <th>id</th>
+			            <th>title</th>
+			        </tr>
+			    </thead>
+			    <tbody id="news-body">
+			        <tr th:each="news : ${newslist}" th:object="${news}">
+			            <td th:text="*{id}"></td>
+			            <td><a th:text="*{title}" th:href="*{url}"></a></td>
+			        </tr>
+			    </tbody>
+			</table>
         </div>
+        
     </div>
 
 </body>

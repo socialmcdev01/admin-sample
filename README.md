@@ -21,14 +21,20 @@ gradle init --type java-library</code></pre>
 gradle eclipse
 notepad .gitignore # > add .gradle, /build/ 
 open project with STS
-    - sts
+</code></pre>
 
-4. web mvc + rest controller
- . create index.html
- . access localhost:8080
+4. web mvc, rest controller
+ - create index.html
+ - access localhost:8080
+ - rest controller
 
 5. data jpa with h2
     - mysql
+<pre><code>h2 db</code></pre>
+
+
+# TODO
+
 6. spring security
 7. thymeleaf
     - jsp

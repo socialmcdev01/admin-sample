@@ -5,12 +5,17 @@
     - import as project
 
 1. install jdk
-    - scoop in windows
-    <pre><code>echo %JAVA_HOME%
-    java -version
-    </code></pre>
+- scoop in windows
+<pre><code>echo %JAVA_HOME%
+java -version</code></pre>
+
 2. gradle
     - maven
+<pre><code>echo %GRADLE_HOME%
+gradle -version
+cd <project_home>
+gradle init --type java-library</code></pre>
+
 3. spring boot
     - sts
 4. web mvc + rest controller

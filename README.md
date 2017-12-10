@@ -13,13 +13,19 @@ java -version</code></pre>
     - maven
 <pre><code>echo %GRADLE_HOME%
 gradle -version
-cd <project_home>
+cd admin-sample
 gradle init --type java-library</code></pre>
 
 3. spring boot
+<pre><code># setup build.gradle.
+gradle eclipse
+notepad .gitignore # > add .gradle, /build/ 
+open project with STS
     - sts
+
 4. web mvc + rest controller
-    - rest api tool
+ . setup spring boot sample
+ - rest api tool
 5. data jpa with h2
     - mysql
 6. spring security

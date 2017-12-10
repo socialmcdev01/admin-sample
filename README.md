@@ -24,8 +24,9 @@ open project with STS
     - sts
 
 4. web mvc + rest controller
- . setup spring boot sample
- - rest api tool
+ . create index.html
+ . access localhost:8080
+
 5. data jpa with h2
     - mysql
 6. spring security

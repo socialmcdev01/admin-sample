@@ -10,4 +10,12 @@ public class ApplicationController {
     public String index() {
         return "index";
     }
+    @RequestMapping("/news")
+    public String news() {
+    	return "news";
+    }
+    @RequestMapping("/admin")
+    public String admin() {
+    	return "admin";
+    }
 }
